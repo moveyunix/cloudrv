@@ -63,120 +63,133 @@
         <header class="bg-glass sticky top-0 z-50">
             <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <div class="flex items-center gap-3">
-                    <!-- 外部图片引用，同目录 logo.png -->
-                    <img src="logo.png" alt="CloudRV Logo" class="h-10">
-                    <span class="text-xl font-bold">CloudRV Community</span>
+                    <!-- CloudRV Logo -->
+                    <div class="text-2xl md:text-3xl font-bold text-white">
+                        <span class="text-primary">CloudRV</span> Community
+                        <span class="ml-2 text-lightBlue">芯筑云原社区</span>
+                    </div>
                 </div>
-                <nav class="hidden md:flex gap-6">
-                    <a href="#home" class="hover:text-lightBlue transition">首页</a>
-                    <a href="#about" class="hover:text-lightBlue transition">关于社区</a>
-                    <a href="#projects" class="hover:text-lightBlue transition">项目</a>
-                    <a href="#partners" class="hover:text-lightBlue transition">参与单位</a>
-                    <a href="#contact" class="hover:text-lightBlue transition">联系我们</a>
-                </nav>
-                <div class="flex gap-3 items-center">
-                    <button id="langBtn" class="px-3 py-1 rounded bg-primary/30 border border-primary text-sm">EN / 中文</button>
+                <div>
+                    <button id="langBtn" class="px-4 py-2 rounded-lg bg-primary/20 border border-primary hover:bg-primary/40 transition">
+                        <i class="fa fa-language mr-1"></i> EN / 中文
+                    </button>
                 </div>
             </div>
         </header>
 
-        <!-- Hero 主视觉 -->
-        <section id="home" class="min-h-[80vh] flex items-center">
-            <div class="container mx-auto px-4 py-16">
-                <div class="max-w-3xl">
-                    <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-bold leading-tight">
-                        <span class="bg-gradient-to-r from-primary to-lightBlue text-gradient">CloudRV</span>
-                        <br>
-                        <span data-i18n="heroTitle">芯筑云原社区</span>
-                    </h1>
-                    <p class="mt-6 text-lg text-gray-300" data-i18n="heroDesc">
-                        面向RISC-V云原生基础设施，共建开放算力生态。
-                    </p>
-                    <div class="mt-8 flex gap-4">
-                        <a href="#about" class="px-6 py-3 rounded bg-primary hover:bg-primary/80 transition">
-                            <span data-i18n="learnMore">了解更多</span>
-                        </a>
-                        <a href="#projects" class="px-6 py-3 rounded bg-glass hover:bg-white/10 transition">
-                            <span data-i18n="viewProject">查看项目</span>
-                        </a>
-                    </div>
+        <!-- Hero 首屏 -->
+        <section class="container mx-auto px-4 py-16 md:py-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight">
+                    <span class="block zh">芯筑云原社区<br>Cloud+RISC-V 云原生开源生态</span>
+                    <span class="block en hidden">CloudRV Community<br>Cloud+RISC-V Cloud Native Open Source Ecosystem</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 zh">
+                    CloudRV Community（芯筑云原社区），是OIF OpenStack RISC‑V SIG、CNCF中国RISC‑V兴趣组对外统一生态品牌。聚焦云基础设施与RISC-V架构融合，共建开放中立的云原生算力生态。
+                </p>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 en hidden">
+                    CloudRV Community is the unified external brand for OIF OpenStack RISC‑V SIG and CNCF China RISC-V Interest Group. It focuses on integrating cloud infrastructure with the RISC-V architecture to build an open, neutral cloud-native computing ecosystem.
+                </p>
+                <div class="mt-10 flex justify-center">
+                    <a href="#event" class="px-8 py-3 bg-primary rounded-lg hover:bg-primary/80 transition font-semibold zh">大会启动仪式介绍</a>
+                    <a href="#event" class="px-8 py-3 bg-primary rounded-lg hover:bg-primary/80 transition font-semibold en hidden">Event Launch Ceremony</a>
                 </div>
             </div>
         </section>
 
-        <!-- 参与单位横向滚动 -->
-        <section id="partners" class="py-16">
-            <div class="container mx-auto px-4 mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-center" data-i18n="partnerTitle">参与单位</h2>
+        <!-- 发起单位无限滚动 -->
+        <section class="py-10 bg-black/30">
+            <div class="container mx-auto px-4 mb-4 text-center">
+                <h3 class="text-xl font-semibold zh">首批参与单位</h3>
+                <h3 class="text-xl font-semibold en hidden">Initial Community Members</h3>
             </div>
             <div class="overflow-hidden">
                 <div class="scroll-infinite flex whitespace-nowrap">
-                    <div class="flex items-center gap-12 px-6">
-                        <div class="h-12 flex items-center">Partner A</div>
-                        <div class="h-12 flex items-center">Partner B</div>
-                        <div class="h-12 flex items-center">Partner C</div>
-                        <div class="h-12 flex items-center">Partner D</div>
-                        <div class="h-12 flex items-center">Partner E</div>
+                    <!-- 列表复制两遍实现无缝滚动 -->
+                    <div class="flex gap-8 px-4">
+                        <span class="px-5 py-3 bg-glass rounded-lg">Linux基金会亚太区</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">中国信息通信研究院</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">中国联通</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">红帽 Red Hat</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">北京开源芯片研究院</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">阿里云</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">中国科学院软件所</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">中兴通讯</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">麒麟软件</span>
                     </div>
-                    <!-- 复制一遍用于无缝循环 -->
-                    <div class="flex items-center gap-12 px-6">
-                        <div class="h-12 flex items-center">Partner A</div>
-                        <div class="h-12 flex items-center">Partner B</div>
-                        <div class="h-12 flex items-center">Partner C</div>
-                        <div class="h-12 flex items-center">Partner D</div>
-                        <div class="h-12 flex items-center">Partner E</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6" data-i18n="aboutTitle">关于社区</h2>
-                <div class="bg-glass p-6 rounded-xl">
-                    <p class="text-gray-300" data-i18n="aboutText">
-                        CloudRV 社区聚焦RISC-V架构与云原生融合，联合产业链伙伴共建开放、可落地的云原生软硬件体系，推动开源算力基础设施发展。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-bold mb-8" data-i18n="projectTitle">社区项目</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-glass p-6 rounded-xl">
-                        <h3 class="text-xl font-semibold">Project 1</h3>
-                        <p class="mt-3 text-gray-300" data-i18n="p1desc">RISC-V云原生底座</p>
-                    </div>
-                    <div class="bg-glass p-6 rounded-xl">
-                        <h3 class="text-xl font-semibold">Project 2</h3>
-                        <p class="mt-3 text-gray-300" data-i18n="p2desc">MoE分布式推理套件</p>
-                    </div>
-                    <div class="bg-glass p-6 rounded-xl">
-                        <h3 class="text-xl font-semibold">Project 3</h3>
-                        <p class="mt-3 text-gray-300" data-i18n="p3desc">开放测试与验证平台</p>
+                    <div class="flex gap-8 px-4">
+                        <span class="px-5 py-3 bg-glass rounded-lg">Linux Foundation Asia Pacific</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">China Academy of Information and Communications Technology</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">China Unicom</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">Red Hat</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">Beijing Open Source Chip Institute</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">Alibaba Cloud</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">ISCAS</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">ZTE</span>
+                        <span class="px-5 py-3 bg-glass rounded-lg">Kylin Software</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6" data-i18n="contactTitle">联系我们</h2>
-                <div class="bg-glass p-6 rounded-xl">
-                    <p class="text-gray-300" data-i18n="contactText">欢迎企业、开发者加入CloudRV社区共建。</p>
+        <!-- 社区介绍 -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-lightBlue zh">社区介绍</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-lightBlue en hidden">Community Introduction</h2>
+                    <div class="space-y-4 text-gray-300 zh">
+                        <p>CloudRV Community（芯筑云原社区）作为OIF OpenStack RISC‑V SIG、CNCF中国RISC‑V兴趣组对外统一的生态品牌载体。面向Cloud+RISC‑V交叉领域，弥合云基础设施技术栈与RISC‑V架构适配缺口。</p>
+                        <p>汇聚企业、科研院所、开源社区、开发者等产学研用多方力量，打通硬件算力、基础软件、云原生技术栈的协同链路。</p>
+                        <p>围绕OpenStack、Kubernetes、容器、编排组件开展架构移植、性能优化、最佳实践沉淀，推动RISC‑V在服务器、数据中心、行业云等真实业务场景落地。</p>
+                        <p>社区承担对外传播、技术共享、人才培育、生态共建职能，输出技术路线图、案例成果、技术文档，构建中立开放的Cloud+RISC‑V协同创新生态。</p>
+                    </div>
+                    <div class="space-y-4 text-gray-300 en hidden">
+                        <p>CloudRV Community is the unified external brand for OIF OpenStack RISC‑V SIG and CNCF China RISC-V Interest Group. Targeting the Cloud+RISC‑V cross domain, it bridges the adaptation gap between cloud infrastructure stacks and the RISC‑V architecture.</p>
+                        <p>It brings together enterprises, research institutes, open-source communities and developers to connect hardware computing, system software and cloud-native stacks.</p>
+                        <p>The community focuses on architecture porting, performance tuning and best practices for OpenStack, Kubernetes and container orchestration, accelerating RISC-V adoption in servers, datacenters and industry clouds.</p>
+                        <p>CloudRV Community delivers technical roadmaps, case studies and documentation, fostering a neutral, open collaborative innovation ecosystem for Cloud+RISC-V.</p>
+                    </div>
+                </div>
+                <div class="bg-glass p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4 zh">核心方向</h3>
+                    <h3 class="text-xl font-semibold mb-4 en hidden">Core Focus Areas</h3>
+                    <ul class="space-y-3 zh">
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>云原生技术栈RISC-V架构移植与适配</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>服务器场景性能调优与生产级最佳实践</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>生态标准共建、案例沉淀与技术文档输出</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>技术研讨、人才培养与全球开源社区协同</li>
+                    </ul>
+                    <ul class="space-y-3 en hidden">
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>RISC-V porting & adaptation of cloud-native stacks</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>Server performance tuning & production best practices</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>Ecosystem standards, case studies & technical docs</li>
+                        <li class="flex items-start gap-2"><i class="fa fa-check-circle text-lightBlue mt-1"></i>Tech workshops, talent development & global open-source collaboration</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <footer class="py-8 border-t border-white/10">
-            <div class="container mx-auto px-4 text-center text-gray-400">
-                <p>© 2026 CloudRV Community. All rights reserved.</p>
+        <!-- 大会启动仪式 -->
+        <section id="event" class="container mx-auto px-4 py-16">
+            <div class="bg-glass rounded-2xl p-8 md:p-12">
+                <h2 class="text-3xl font-bold mb-6 text-lightBlue zh">CloudRVCon 大会 · 社区启动仪式</h2>
+                <h2 class="text-3xl font-bold mb-6 text-lightBlue en hidden">CloudRVCon · Community Launch Ceremony</h2>
+                <div class="space-y-4 text-gray-300 zh">
+                    <p>在<strong>CloudRVCon芯筑云原：Cloud+RISC-V技术沙龙暨RISC-V SIG成立大会</strong>上，将同步举办RISC‑V SIG工作组成立暨CloudRV Community（芯筑云原社区）双启动仪式。</p>
+                    <p>仪式将正式对外宣告：OIF OpenStack RISC‑V SIG、CNCF中国RISC‑V兴趣组正式成立，同时发布“CloudRV Community”作为两大工作组统一对外社区品牌，标志芯筑云原社区正式启动运行。</p>
+                    <p>现场邀请指导单位、发起企业、科研机构代表共同上台启动，线下参会专家与线上开发者共同见证。仪式之后，CloudRV Community将作为对外窗口，持续开展技术研讨、代码协同、案例分享与生态合作，持续推进Cloud+RISC‑V技术适配与产业落地。</p>
+                </div>
+                <div class="space-y-4 text-gray-300 en hidden">
+                    <p>The <strong>CloudRVCon: Cloud+RISC-V Salon & RISC-V SIG Establishment Conference</strong> will host the dual launch ceremony for RISC‑V SIGs and CloudRV Community.</p>
+                    <p>The ceremony officially announces the founding of OIF OpenStack RISC‑V SIG and CNCF China RISC-V Interest Group, and launches CloudRV Community as the unified public brand for both working groups.</p>
+                    <p>Representatives from steering organizations, founding enterprises and research institutes will jointly kick off the community, witnessed by on-site experts and online developers. After the launch, CloudRV Community will serve as the public hub for technical workshops, code collaboration, case sharing and ecosystem cooperation, to drive Cloud+RISC-V technical adaptation and industry adoption.</p>
+                </div>
             </div>
+        </section>
+
+        <footer class="py-10 text-center text-gray-400 text-sm">
+            <p>© 2026 CloudRV Community | 芯筑云原社区</p>
         </footer>
     </div>
 
@@ -185,97 +198,55 @@
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let w, h;
-        let particles = [];
-
-        function resize() {
+        function resize(){
             w = canvas.width = window.innerWidth;
             h = canvas.height = window.innerHeight;
         }
-        window.addEventListener('resize', resize);
         resize();
-
-        class Particle {
-            constructor(){
-                this.x = Math.random() * w;
-                this.y = Math.random() * h;
-                this.r = Math.random() * 1.2 + 0.3;
-                this.vx = (Math.random()-0.5)*0.4;
-                this.vy = (Math.random()-0.5)*0.4;
-            }
-            update(){
-                this.x += this.vx;
-                this.y += this.vy;
-                if(this.x <0 || this.x>w) this.vx *= -1;
-                if(this.y <0 || this.y>h) this.vy *= -1;
-            }
-            draw(){
-                ctx.beginPath();
-                ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
-                ctx.fillStyle='rgba(54,191,250,0.5)';
-                ctx.fill();
-            }
+        window.addEventListener('resize', resize);
+        const particles = [];
+        for(let i=0; i<120; i++){
+            particles.push({
+                x: Math.random()*w,
+                y: Math.random()*h,
+                r: Math.random()*1.2+0.2,
+                speedX: (Math.random()-0.5)*0.4,
+                speedY: (Math.random()-0.5)*0.4
+            })
         }
-        for(let i=0;i<80;i++) particles.push(new Particle());
-
-        function animate(){
+        function draw(){
             ctx.clearRect(0,0,w,h);
+            ctx.fillStyle = "#36BFFA";
             particles.forEach(p=>{
-                p.update();p.draw();
+                ctx.beginPath();
+                ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+                ctx.fill();
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if(p.x<0) p.x=w;
+                if(p.x>w) p.x=0;
+                if(p.y<0) p.y=h;
+                if(p.y>h) p.y=0;
             })
-            requestAnimationFrame(animate);
+            requestAnimationFrame(draw);
         }
-        animate();
-    </script>
+        draw();
 
-    <!-- 双语切换脚本 -->
-    <script>
-        const i18n = {
-            zh:{
-                heroTitle:"芯筑云原社区",
-                heroDesc:"面向RISC-V云原生基础设施，共建开放算力生态。",
-                learnMore:"了解更多",
-                viewProject:"查看项目",
-                partnerTitle:"参与单位",
-                aboutTitle:"关于社区",
-                aboutText:"CloudRV 社区聚焦RISC-V架构与云原生融合，联合产业链伙伴共建开放、可落地的云原生软硬件体系，推动开源算力基础设施发展。",
-                projectTitle:"社区项目",
-                p1desc:"RISC-V云原生底座",
-                p2desc:"MoE分布式推理套件",
-                p3desc:"开放测试与验证平台",
-                contactTitle:"联系我们",
-                contactText:"欢迎企业、开发者加入CloudRV社区共建。"
-            },
-            en:{
-                heroTitle:"CloudRV Community",
-                heroDesc:"Building open computing ecosystem for RISC-V cloud-native infrastructure.",
-                learnMore:"Learn More",
-                viewProject:"View Projects",
-                partnerTitle:"Partners",
-                aboutTitle:"About Community",
-                aboutText:"CloudRV Community focuses on integration of RISC-V and cloud-native, collaborating with industry partners to build open, production-ready cloud-native hardware & software stack, advancing open-source computing infrastructure.",
-                projectTitle:"Community Projects",
-                p1desc:"RISC-V Cloud Native Base",
-                p2desc:"MoE Distributed Inference Kit",
-                p3desc:"Open Test & Validation Platform",
-                contactTitle:"Contact Us",
-                contactText:"Enterprises and developers are welcome to join and co-build CloudRV Community."
+        // 语言切换
+        const langBtn = document.getElementById('langBtn');
+        const zhList = document.querySelectorAll('.zh');
+        const enList = document.querySelectorAll('.en');
+        let isZh = true;
+        langBtn.onclick = ()=>{
+            isZh = !isZh;
+            if(isZh){
+                zhList.forEach(el=>el.classList.remove('hidden'));
+                enList.forEach(el=>el.classList.add('hidden'));
+            }else{
+                zhList.forEach(el=>el.classList.add('hidden'));
+                enList.forEach(el=>el.classList.remove('hidden'));
             }
         }
-        let currentLang = "zh";
-        const langBtn = document.getElementById("langBtn");
-        function updateLang(){
-            const lang = i18n[currentLang];
-            document.querySelectorAll('[data-i18n]').forEach(el=>{
-                const key = el.getAttribute('data-i18n');
-                el.textContent = lang[key];
-            })
-            langBtn.textContent = currentLang === "zh" ? "EN / 中文" : "中文 / EN";
-        }
-        langBtn.onclick = ()=>{
-            currentLang = currentLang === "zh" ? "en" : "zh";
-            updateLang();
-        }
-        updateLang();
     </script>
 </body>
 </html>
